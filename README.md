@@ -24,3 +24,27 @@ const Switch = ({ isOn, handleToggle }) => {
         </>
     )
 }
+
+parent component :
+
+
+const [value, setValue] = useState(false)
+const [darkTheme, setDarkTheme] = useState(false)
+<Navbar
+    bg='light'
+    variant='light'
+    expand='lg'
+    collapseOnSelect
+    className={darkTheme ? 'dark-theme' : 'light-theme'}
+>
+<Switch
+    isOn={value}
+    handleToggle={() => setValue(!value)}
+    onChange={() => setDarkTheme(prevTheme => !prevTheme)} />
+</Navbar>
+
+
+
+
+
+
